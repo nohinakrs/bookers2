@@ -1,6 +1,6 @@
 <h1>新規投稿</h1>
 <% if @book.errors.any? %>
-  <%= @list.errors.count %> errors prohibited this book from being saved:
+  <%= @list.errors.count %> errors
   <ul>
     <% @book.errors.full_messages.each do |message| %>
       <li><%= message %></li>

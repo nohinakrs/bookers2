@@ -1,9 +1,51 @@
-<h1>投稿一覧</h1>
+<h1>Books</h1>
+<table>
+  <therd>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+    </tr>
+  </therd>
+  <tbody>
+    <tr>
+    <%= @books.each do |book| %>
+      <% # 中身取り出せてます 2025/7/10 %>
+    <% end %>
+    </tr>
+    <tr><p><%= @book.title %></p></tr>
+    <tr><p><%= @book.body %></p></tr>
+    <% # 表示がなく、弄るとメソッドがありませんエラーに陥る 2025/7/10 %>
+  </tbody>
+</table>
 
-<% @books.each do |book| %>
+<h2>タイトル</h2>
+<p><%= @book.title %></p>
 
-  <span>
-    <%= link_to book.title, book_path(book.id) %>
-  </span>
+<h2>本文</h2>
+<p><%= @book.body %></p>
+
+<% #<%= link_to "編集", edit_book_path(@book.id) %>
+<% #<%= link_to "削除", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+<% #パスのミスがある。修正方法を模索中 %>
+
+<h2>New book</h2>
+<% if @book.errors.any? %>
+  <%= @book.errors.count %> errors
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with model: @book, url: '/books', method: :post do |f| %>
+
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+  
+  <h4>Body</h4>
+  <%= f.text_area :body %>
+  
+  <%= f.submit 'Create Book' %>
   
 <% end %>
