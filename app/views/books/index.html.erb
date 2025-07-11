@@ -12,19 +12,13 @@
       <% # 中身取り出せてます 2025/7/10 %>
     <% end %>
     </tr>
-    <tr><p><%= @book.title %></p></tr>
-    <tr><p><%= @book.body %></p></tr>
+    <tr><%= @book.title %></tr>
+    <tr><%= @book.body %></tr>
     <% # 表示がなく、弄るとメソッドがありませんエラーに陥る 2025/7/10 %>
   </tbody>
 </table>
 
-<h2>タイトル</h2>
-<p><%= @book.title %></p>
-
-<h2>本文</h2>
-<p><%= @book.body %></p>
-
-<% #<%= link_to "編集", edit_book_path(@book.id) %>
+<%= link_to("edit", "/books/#{@book.id}/edit") %>
 <% #<%= link_to "削除", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
 <% #パスのミスがある。修正方法を模索中 %>
 
