@@ -7,30 +7,27 @@
       <h2>User info</h2>
       <table>
         <thead>
-          <tr></tr>
+          <tr><%= image_tag @user.get_profile_image(100,100) %></tr>
           <tr>
             <th>name</th>
-            <th>
-              <%= form_with model: @user, url: '/user', method: :post do |f| %>
-                <%= f.string_field :name %>
-              <% end %>
-            </th>
+            <th><%= @user.name %></th>
           </tr>
           <tr>
             <th>introduction</th>
-            <th></th>
+            <th><% @user.introduction %></th>
           </tr>
         </thead>
         <tbody></tbody>
       </table>
-      <div><%= link_to "introduction", edit_user_path(user.id) %></div>
+
+      <div><%= link_to "edit", edit_user_path(@user.id) %></div>
 
       <h2>New Book</h2>
 
       <%= form_with model: @book, url: '/books', method: :post do |f| %>
         <div>
           <h4>Title</h4>
-          <%= f.string_field :title %>
+          <%= f.text_field :title %>
         </div>
 
         <div>
