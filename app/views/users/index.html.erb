@@ -1,1 +1,20 @@
 <%= render 'list', users: @user %>
+
+<h2>Users</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @users.each do |user| %>
+            <tr>
+                <%= image_tag user.get_profile_image(50, 50) %>
+                <td><%= link_to user.name, users_path(user) %></td>
+                <td><%= link_to "show",user_path(user.id) %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
