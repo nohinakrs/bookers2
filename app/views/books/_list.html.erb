@@ -22,16 +22,16 @@
 
 
 <h2>New Book</h2>
-<%= form_with model: @book, url: '/books', method: :post do |f| %>
-    <div>
-        <h4>Title</h4>
-        <%= f.text_field :title %>
-    </div>
-    <div>
-        <h4>Body</h4>
-        <%= f.text_area :body %>
-    </div>
-    <div>
-        <%= f.submit 'Create Book' %>
-    </div>
+<%= form_with model: @book do |f| %>
+  <div>
+    <h4>Title</h4>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <h4>Body</h4>
+    <%= f.text_area :body %>
+  </div>
+  <div>
+    <%= f.submit 'Create Book' %>
+  </div>
 <% end %>

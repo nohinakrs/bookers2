@@ -9,7 +9,7 @@
         </tr>
     </thead>
     <tbody>
-        <% @users.each do |user| %>
+        <% @user.each do |user| %>
             <tr>
                 <%= image_tag user.get_profile_image(50, 50) %>
                 <td><%= link_to user.name, users_path(user) %></td>
