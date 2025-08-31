@@ -15,13 +15,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
         <% @books.each do |book| %>
-          <th><%#= image_tag book.get_book_image(100, 100) %></th>
-          <th><%= link_to @book.title, book_path(@book) %></th>
-          <th><%= @book.body %></th>
-        <% end %>
+        <tr>
+          <td><%= image_tag book.user.get_profile_image(100, 100) %></td>
+          <td><%= link_to book.title, book_path(book) %></td>
+          <td><%= book.body %></td>
         </tr>
+        <% end %>
     </tbody>
 </table>
 

@@ -16,12 +16,13 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.new(book_params)
+    #クリエイト系をnewbookに統一しわすれてbook変数でエラーが起きていた。修正済み
+    @newbook = Book.new(book_params)
     @user = current_user
-    @book.user_id = current_user.id
-    if @book.save
+    @newbook.user_id = current_user.id
+    if @newbook.save
       flash[:notice] = "Book was successfully created."
-      redirect_to book_path(@book.id)
+      redirect_to book_path(@newbook.id)
     else
       @books = Book.all
       render :index
