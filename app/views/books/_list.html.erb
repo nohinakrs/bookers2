@@ -1,4 +1,12 @@
 <div class="col-md-3">
+<% if @newbook.errors.any? %>
+  <%= @newbook.errors.count %> errors
+  <ul>
+    <% @newbook.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
   <h2>User info</h2>
       <table class="table">
           <tbody>
