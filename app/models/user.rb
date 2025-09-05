@@ -7,8 +7,7 @@ class User < ApplicationRecord
          has_one_attached :profile_image
          has_many :books, dependent: :destroy
 
-         validates :name, presence: true, length: { minimum: 20 }
-         validates :introduction, presence: true, length: { maximum: 50 }
+         validates :name, presence: true
 
   #以下の表記は画像がない時にどうするかの処理をする記述、高さ幅の変数を冒頭で（）内に定義
          def get_profile_image(width, height)

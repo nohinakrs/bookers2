@@ -7,10 +7,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @users = User.all
+   # @users = User.all
     @books = Book.all
     @newbook = Book.new
   end
+
 
   def index
     @books = Book.all
