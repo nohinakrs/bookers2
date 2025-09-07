@@ -7,7 +7,7 @@ class UsersController < ApplicationController
       redirect_to user_path(current_user)
     end
   end
-
+  
   def show
     @user = User.find(params[:id])
     @books = @user.books
