@@ -14,25 +14,22 @@
 <%= form_with model: @user do |f| %>
 
   <div class="form-group">
-  <label for="inputName">Name</label><br>
-  <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
-  <br>
+  <p>Name</p>
+  <%= f.text_field :name, autofocus: true, id:"inputName", class:"form-control name" %>
   </div>
 
   <div class="form-group">
-  <label for="inputImage">ProfileImage</label><br>
-  <%= f.file_field :profile_image, placeholder: "Image", accept: "image/*" %>
-  <br>
+  <p>Image</p>
+  <%= f.file_field :profile_image, placeholder: "Image", accept: "image/*", class:"form-control-file user_image" %>
   </div>
 
   <div class="form-group">
-  <label for="user_introduction">Introduction</label><br>
-  <%= f.text_field :introduction, autofocus: true, id:"inputIntroduction", placeholder:"introduction" %>
-  <br>
+  <p>Introduction</p>
+  <%= f.text_field :introduction, autofocus: true, id:"inputIntroduction", class:"form-control introduction" %>
   </div>
 
   <div class="form-group">
-  <%= f.submit "Update User" %>
+  <%= f.submit "Update User", class:"btn btn-secondary" %>
   </div>
 <% end %>
 
