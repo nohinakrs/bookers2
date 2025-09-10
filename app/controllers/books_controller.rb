@@ -18,7 +18,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     if @book.user_id != current_user.id
     redirect_to user_path
-  end
+    end
   end
 
   def create

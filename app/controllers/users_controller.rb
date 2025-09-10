@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
-  
+
   def show
     @user = User.find(params[:id])
     @books = @user.books
@@ -28,7 +28,6 @@ class UsersController < ApplicationController
         render "edit"
       end
   end
-
 
   private
 
